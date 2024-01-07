@@ -1,0 +1,18 @@
+Field,Query String Param,S3,Asgard,DSWB BEACON_TABLE var,Examples,Description,MetricGroup
+Frustration Index,,,,FRUSTRATIONINDEX,,,2023metrics
+LCP Decoded Body Size,pt.lcp.e.dbs,,,LARGESTCONTENTFULPAINTELEMENTDECODEDBODYSIZE,,,2023metrics
+First Contentful Paint (Front End),fcp - t_resp,fcpfe,,largestcontentfulpaintfrontend,,fcp - ttfb,2023timers
+Largest Contentful Paint (Front End),lcp - t_resp,,,LARGESTCONTENTFULPAINTFRONTEND,,lcp - ttfb,2023timers
+Time to Visually Ready (Front End),ttvr - ttfb,,,,,,2023timers
+Time to Interactive  (Front End),tti - ttfb,,,,,,2023timers
+Time to Request,ttr,,,TIMETOREQUEST,,nt_req_st - nt_nav_st,2023nettimers
+"Unattributed Navigation Overhead ""UNO""",(nt_unload_st-nt_nav_st)(nt_red_st-nt_unload_end)(nt_con_st-nt_dns_end)+(nt_req_st-nt_con_end),,,"UNATTRIBUTEDNAVIGATIONOVERHEAD,",,,2023nettimers
+LCP Transfer Time,RT[].ResponseEnd - RT[].StartTime || 0,,,LARGESTCONTENTFULPAINTELEMENTTRANSFERTIME,,,2023nettimers
+Page DCN Cache Status,,,,PAGECDNCACHESTATUSKEY,,,2023dimensions
+EdgeWorker Executed,ak.ew,,,EDGEWORKEREXECUTEDKEY,1,,2023dimensions
+Early Hints,nt_fir_st,,,EARLYHINTSKEY,1000000010800,,2023dimensions
+Page Domain,params.u (extracted from),,,PAGEDOMAINKEY,,,2023dimensions
+Prerendered,nt_act_st,,,PRERENDEREDKEY,10905,,2023dimensions
+Device Memory,dev.mem,,,DEVICEMEMORYKEY,0.25,,2023dimensions
+BFCahce navigation,,,,BFCACHENAVIGATIONKEY,,,2023dimensions
+BFCache Not Restored Reason,,,,BFCACHENOTRESTOREDREASONKEY,,,2023dimensions
