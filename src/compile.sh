@@ -65,5 +65,5 @@ mlr --c2j --jlistwrap cat downloaded/metrics2023.csv | jq '.[]' > /tmp/metrics20
 # Concat Metrics 2023 and What's... into a single JSON lines doc 
 #############
 
-cat /tmp/whatsbecon.split.out*.json /tmp/metrics2023.json > spec/whatsbecon.jsonl;
+cat /tmp/whatsbecon.split.out*.json /tmp/metrics2023.json > spec/beaconspec.jsonl;
 
