@@ -3,11 +3,79 @@ Per Beacon Data Specfication
 
 This is the specfication of the data that each beacon may contain, and the data that mPulse stores for each beacon received.
 
-
 # Structure of Spec
 
+## JSON Lines
 The specfication is in JSON documents, each document describing a datum that mPulse may store for any beacon mPulse receives.  
 The datum may arrive in the beacon or may be calculated from the data in the beacon.  
+
+## Google Sheet
+
+The JSON docs were compiled into a CSV, uploaded to
+[Google Sheet version of spec](https://docs.google.com/spreadsheets/d/1w2B29h6tVf2UmXvmRpp5HtN9OePzemWG-iIQhCLu_ow/edit?usp=sharing).
+
+The procedure to compile JSON to CSV is the section _Query Examples_ below.  
+
+# Querying Spec
+
+The spec can be queried as a JSON lines doc using any JSON query tool.  The examples below use [jq](https://jqlang.github.io/jq/manual/v1.7/). 
+
+## Query Examples
+
+### Find row for S3 "ak.ed" 
+
+```
+cat beaconspec.jsonl |\
+ jq '.|select(.S3=="ak.ed") | 
+ {group:.MetricGroup, field:.Field, s3:.S3}' 
+```
+
+### Print whole spec as CSV
+
+Derived from [Stack Overflow answer](https://stackoverflow.com/a/32965227)
+
+This was used to generate [Google Sheet version of spec](https://docs.google.com/spreadsheets/d/1w2B29h6tVf2UmXvmRpp5HtN9OePzemWG-iIQhCLu_ow/edit?usp=sharing).
+
+```
+cat beaconspec.json |\
+jq -sr '(map(keys) | add | unique) as $cols |
+ map(. as $row | $cols | map($row[.])) as $rows |
+ $cols, $rows[] | 
+ @csv' |\
+column -t -s,;
+```
+
+### Simplified conversion to CSV
+
+Print as CSV, simplified -- only keys of first object.
+Useful for printing results from similar groups 
+
+```
+cat beaconspec.json |\
+ jq -sr '(.[0] | keys_unsorted) as $keys |
+ $keys, map([.[ $keys[] ]])[] |
+ @csv'
+```
+
+### Find all rows with "Field"
+
+Find all rows with key "Field".
+Print as CSV.
+Prettify  with tabs.
+
+```
+cat beaconspec.json |\
+ jq '.|select(.Field) |
+ {
+    group:.MetricGroup, 
+    field:.Field, 
+    s3:.S3
+ }' |\
+ jq -sr '(.[0] | keys_unsorted) as $keys |
+ $keys, map([.[ $keys[] ]])[] |
+ @csv' |\
+column -t -s,;
+```
 
 
 # Source of Spec
