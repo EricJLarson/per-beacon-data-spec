@@ -16,6 +16,23 @@ The JSON docs were compiled into a CSV, uploaded to
 
 The procedure to compile JSON to CSV is the section _Query Examples_ below.  
 
+## Spec Formats Relationships
+
+This is the dataflow between the spec formats, originating with the HTML pages, which are then 
+compiled by _compile.sh_, which generates JSON that can be converted to CSV.
+
+```
+                                                             ┌────────────┐   ┌──────┐
+                                                             │Markdwn tabl├──►│HTML  │
+┌─────────────────┐                                          ├────────────┤   └──────┘
+│WhatsInBeacon.htm│        ┌───────────┐   ┌────┐    ┌───┐   │SQL         │
+├─────────────────┼──────► │compile.sh ├──►│json├───►│csv├──►├────────────┤                
+├─────────────────┤        └───────────┘   └────┘    └───┘   │spreadsheet │
+│metrics2023.html │                                          └────────────┘
+└─────────────────┘
+```
+
+
 # Querying Spec
 
 The spec can be queried as a JSON lines doc using any JSON query tool.  The examples below use [jq](https://jqlang.github.io/jq/manual/v1.7/). 
