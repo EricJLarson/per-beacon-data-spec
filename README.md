@@ -12,7 +12,7 @@ The datum may arrive in the beacon or may be calculated from the data in the bea
 ## Google Sheet
 
 The JSON docs were compiled into a CSV, uploaded to
-[Google Sheet version of spec](https://docs.google.com/spreadsheets/d/1w2B29h6tVf2UmXvmRpp5HtN9OePzemWG-iIQhCLu_ow/edit?usp=sharing).
+[Google Sheet version of spec](https://docs.google.com/spreadsheets/d/1-piYmWI5cVZJk-bxNuSWmVh0ijpNmxd2jJ8EOb8l9ek/edit?usp=sharing).
 
 The procedure to compile JSON to CSV is the section _Query Examples_ below.  
 
@@ -37,7 +37,7 @@ Derived from [Stack Overflow answer](https://stackoverflow.com/a/32965227)
 This was used to generate [Google Sheet version of spec](https://docs.google.com/spreadsheets/d/1w2B29h6tVf2UmXvmRpp5HtN9OePzemWG-iIQhCLu_ow/edit?usp=sharing).
 
 ```
-cat beaconspec.json |\
+cat beaconspec.jsonl |\
 jq -sr '(map(keys) | add | unique) as $cols |
  map(. as $row | $cols | map($row[.])) as $rows |
  $cols, $rows[] | 
@@ -51,7 +51,7 @@ Print as CSV, simplified -- only keys of first object.
 Useful for printing results from similar groups 
 
 ```
-cat beaconspec.json |\
+cat beaconspec.jsonl |\
  jq -sr '(.[0] | keys_unsorted) as $keys |
  $keys, map([.[ $keys[] ]])[] |
  @csv'
@@ -64,7 +64,7 @@ Print as CSV.
 Prettify  with tabs.
 
 ```
-cat beaconspec.json |\
+cat beaconspec.jsonl |\
  jq '.|select(.Field) |
  {
     group:.MetricGroup, 
@@ -100,4 +100,18 @@ This all allows the objects to be joined on common member names.
 
 The compilation procedure and original sources are stored in _src/_ in this repo.
 
+## Compilation Procedure
 
+This requires Bash utillities _jq_ and _mlr_. 
+
+This has been tested only on Mac OS.
+
+In a terminal, change working directory to  _src/_ of this repo, then execute _compile.sh_.
+
+```
+pushd src/;
+./compile.sh;
+popd;
+```
+
+The result will be _../beaconspec.jsonl_. 
