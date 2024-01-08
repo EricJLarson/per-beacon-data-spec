@@ -47,62 +47,72 @@ For example, to run the query `.[] |select(.S3=="ak.ed")`, do the following:
 ```
 cat beaconspec.json |\
 jq '
-    .[] |select(.S3=="ak.ed")
+    .[] | select(.S3=="ak.ed")
 '
 ```
 
 ### Find row for S3 "ak.ed" 
 
 ```
-    .[] |select(.S3=="ak.ed") | 
-    {group:.MetricGroup, field:.Field, s3:.S3}
+    .[] | select(.S3=="ak.ed") 
 ```
 
 ### Find row for S3 "ak.ed", get MetricGroup and Field
 
 ```
-    .[] |select(.S3=="ak.ed") | 
+    .[] | select(.S3=="ak.ed") | 
     {group:.MetricGroup, field:.Field, s3:.S3}
 ``` 
 
 ### Find all rows with key "Field"
 
 ```
-    .[]|
-    select(.Field) |
-    {
-      group:.MetricGroup, 
-      field:.Field, 
-      s3:.S3
-    }
+    .[] | select(.Field) 
 ```
 
 ### List the keys for a member of group "Akamai" 
 
 ```
-    map(select(.MetricGroup=="Akamai"))[0] |
-    keys_unsorted
+    map(
+        select(.MetricGroup=="Akamai")
+    )[0] |
+    keys
 ``` 
 
 ### List all keys for all rows
 
 ```
-map(keys) | add | unique
+    map(keys) |
+    add |
+    unique
+```
+
+### Count all rows 
+
+```
+    length
 ```
 
 ### List all keys for all members of group "Akamai" 
 
 ```
-    map(select(.MetricGroup=="Akamai")) |
-    map(keys) | add | unique
+    map(
+        select(.MetricGroup=="Akamai")
+    ) |
+    map(keys) |
+    add |
+    unique
 ```
 
 
 ### List all Query String Param values for all members of group "Akamai" 
 
 ```
-    map(select(.MetricGroup=="Akamai") |
-    .["Query String Param"]) | unique
+    map(
+        select(.MetricGroup=="Akamai")
+    ) |
+    .["Query String Param"]) |
+    unique
 ```
 
 ### List all Query String Param values for all members of group "Akamai" 
@@ -117,17 +127,7 @@ map(keys) | add | unique
 ```
 
 
-### Count all possible Query String Param values 
-
-```
-    map(
-      .["Query String Param"]
-    ) |
-    unique | 
-    length
-```
-
-### Count all possible Query String Param values 
+### Count all Query String Param values 
 
 ```
     map(
@@ -140,13 +140,9 @@ map(keys) | add | unique
 ### Count all rows that have no Query String Param value
 
 ```
-    map(select(.["Query String Param"] == null)) |
-    length
-```
-
-### Count all rows 
-
-```
+    map(
+        select(.["Query String Param"] == null)
+    ) |
     length
 ```
 
@@ -157,8 +153,16 @@ Derived from [Stack Overflow answer](https://stackoverflow.com/a/32965227)
 This was used to generate [Google Sheet version of spec](https://docs.google.com/spreadsheets/d/1w2B29h6tVf2UmXvmRpp5HtN9OePzemWG-iIQhCLu_ow/edit?usp=sharing).
 
 ```
-    (map(keys) | add | unique) as $cols |
-    map(. as $row | $cols | map($row[.])) as $rows |
+    (map(keys) |
+        add | 
+        unique
+    ) as $cols |
+    map(. as $row |
+         $cols |
+         map(
+            $row[.]
+        )
+    ) as $rows |
     $cols, $rows[] |
     @csv
 ```
