@@ -35,16 +35,119 @@ compiled by _compile.sh_, which generates JSON that can be converted to CSV.
 
 # Querying Spec
 
-The spec can be queried as a JSON lines doc using any JSON query tool.  The examples below use [jq](https://jqlang.github.io/jq/manual/v1.7/). 
+The spec can be queried as a JSON doc using any JSON query tool.  The examples below use [jq](https://jqlang.github.io/jq/manual/v1.7/). 
 
-## Query Examples
+# Query Examples
+
+## JQuery Examples
+
+Each query below is a commandline arguments for _jq_, executed at the Bash prompt.
+For example, to run the query `.[] |select(.S3=="ak.ed")`, do the following:
+
+```
+cat beaconspec.json |\
+jq '
+    .[] |select(.S3=="ak.ed")
+'
+```
 
 ### Find row for S3 "ak.ed" 
 
 ```
-cat beaconspec.jsonl |\
- jq '.|select(.S3=="ak.ed") | 
- {group:.MetricGroup, field:.Field, s3:.S3}' 
+    .[] |select(.S3=="ak.ed") | 
+    {group:.MetricGroup, field:.Field, s3:.S3}
+```
+
+### Find row for S3 "ak.ed", get MetricGroup and Field
+
+```
+    .[] |select(.S3=="ak.ed") | 
+    {group:.MetricGroup, field:.Field, s3:.S3}
+``` 
+
+### Find all rows with key "Field"
+
+```
+    .[]|
+    select(.Field) |
+    {
+      group:.MetricGroup, 
+      field:.Field, 
+      s3:.S3
+    }
+```
+
+### List the keys for a member of group "Akamai" 
+
+```
+    map(select(.MetricGroup=="Akamai"))[0] |
+    keys_unsorted
+``` 
+
+### List all keys for all rows
+
+```
+map(keys) | add | unique
+```
+
+### List all keys for all members of group "Akamai" 
+
+```
+    map(select(.MetricGroup=="Akamai")) |
+    map(keys) | add | unique
+```
+
+
+### List all Query String Param values for all members of group "Akamai" 
+
+```
+    map(select(.MetricGroup=="Akamai") |
+    .["Query String Param"]) | unique
+```
+
+### List all Query String Param values for all members of group "Akamai" 
+
+```
+    map(
+      select(.MetricGroup=="Akamai") |
+      .["Query String Param"]
+    ) |
+    unique |
+    .[]
+```
+
+
+### Count all possible Query String Param values 
+
+```
+    map(
+      .["Query String Param"]
+    ) |
+    unique | 
+    length
+```
+
+### Count all possible Query String Param values 
+
+```
+    map(
+      .["Query String Param"]
+    ) |
+    unique | 
+    length
+```
+
+### Count all rows that have no Query String Param value
+
+```
+    map(select(.["Query String Param"] == null)) |
+    length
+```
+
+### Count all rows 
+
+```
+    length
 ```
 
 ### Print whole spec as CSV
@@ -54,46 +157,11 @@ Derived from [Stack Overflow answer](https://stackoverflow.com/a/32965227)
 This was used to generate [Google Sheet version of spec](https://docs.google.com/spreadsheets/d/1w2B29h6tVf2UmXvmRpp5HtN9OePzemWG-iIQhCLu_ow/edit?usp=sharing).
 
 ```
-cat beaconspec.jsonl |\
-jq -sr '(map(keys) | add | unique) as $cols |
- map(. as $row | $cols | map($row[.])) as $rows |
- $cols, $rows[] | 
- @csv' |\
-column -t -s,;
+    (map(keys) | add | unique) as $cols |
+    map(. as $row | $cols | map($row[.])) as $rows |
+    $cols, $rows[] |
+    @csv
 ```
-
-### Simplified conversion to CSV
-
-Print as CSV, simplified -- only keys of first object.
-Useful for printing results from similar groups 
-
-```
-cat beaconspec.jsonl |\
- jq -sr '(.[0] | keys_unsorted) as $keys |
- $keys, map([.[ $keys[] ]])[] |
- @csv'
-```
-
-### Find all rows with "Field"
-
-Find all rows with key "Field".
-Print as CSV.
-Prettify  with tabs.
-
-```
-cat beaconspec.jsonl |\
- jq '.|select(.Field) |
- {
-    group:.MetricGroup, 
-    field:.Field, 
-    s3:.S3
- }' |\
- jq -sr '(.[0] | keys_unsorted) as $keys |
- $keys, map([.[ $keys[] ]])[] |
- @csv' |\
-column -t -s,;
-```
-
 
 # Source of Spec
 
@@ -131,4 +199,4 @@ pushd src/;
 popd;
 ```
 
-The result will be _../beaconspec.jsonl_. 
+The result will be _../beaconspec.json_. 

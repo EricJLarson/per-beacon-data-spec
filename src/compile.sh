@@ -1,4 +1,5 @@
 #!/bin/bash
+set -e
 
 ##############
 # Compiles files in this repo's dir downloaded/ to the contents of 
@@ -76,5 +77,5 @@ mlr --c2j --jlistwrap cat downloaded/metrics2023.csv | jq '.[]' > /tmp/metrics20
 # Concat Metrics 2023 and What's... into a single JSON lines doc 
 #############
 
-cat /tmp/whatsbecon.split.out*.json /tmp/metrics2023.json > ../beaconspec.jsonl;
+cat /tmp/whatsbecon.split.out*.json /tmp/metrics2023.json | jq -s >  ../beaconspec.json;
 
