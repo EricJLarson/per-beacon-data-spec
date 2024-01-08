@@ -1859,176 +1859,6 @@
   "MetricGroup": "PageStructure"
 }
 {
-  "Field": "Frustration Index",
-  "Query String Param": "",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "FRUSTRATIONINDEX",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023metrics"
-}
-{
-  "Field": "LCP Decoded Body Size",
-  "Query String Param": "pt.lcp.e.dbs",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "LARGESTCONTENTFULPAINTELEMENTDECODEDBODYSIZE",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023metrics"
-}
-{
-  "Field": "First Contentful Paint (Front End)",
-  "Query String Param": "fcp - t_resp",
-  "S3": "fcpfe",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "largestcontentfulpaintfrontend",
-  "Examples": "",
-  "Description": "fcp - ttfb",
-  "MetricGroup": "2023timers"
-}
-{
-  "Field": "Largest Contentful Paint (Front End)",
-  "Query String Param": "lcp - t_resp",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "LARGESTCONTENTFULPAINTFRONTEND",
-  "Examples": "",
-  "Description": "lcp - ttfb",
-  "MetricGroup": "2023timers"
-}
-{
-  "Field": "Time to Visually Ready (Front End)",
-  "Query String Param": "ttvr - ttfb",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023timers"
-}
-{
-  "Field": "Time to Interactive  (Front End)",
-  "Query String Param": "tti - ttfb",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023timers"
-}
-{
-  "Field": "Time to Request",
-  "Query String Param": "ttr",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "TIMETOREQUEST",
-  "Examples": "",
-  "Description": "nt_req_st - nt_nav_st",
-  "MetricGroup": "2023nettimers"
-}
-{
-  "Field": "Unattributed Navigation Overhead \"UNO\"",
-  "Query String Param": "(nt_unload_st-nt_nav_st)(nt_red_st-nt_unload_end)(nt_con_st-nt_dns_end)+(nt_req_st-nt_con_end)",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "UNATTRIBUTEDNAVIGATIONOVERHEAD,",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023nettimers"
-}
-{
-  "Field": "LCP Transfer Time",
-  "Query String Param": "RT[].ResponseEnd - RT[].StartTime || 0",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "LARGESTCONTENTFULPAINTELEMENTTRANSFERTIME",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023nettimers"
-}
-{
-  "Field": "Page DCN Cache Status",
-  "Query String Param": "",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "PAGECDNCACHESTATUSKEY",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
-  "Field": "EdgeWorker Executed",
-  "Query String Param": "ak.ew",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "EDGEWORKEREXECUTEDKEY",
-  "Examples": 1,
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
-  "Field": "Early Hints",
-  "Query String Param": "nt_fir_st",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "EARLYHINTSKEY",
-  "Examples": 1000000010800,
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
-  "Field": "Page Domain",
-  "Query String Param": "params.u (extracted from)",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "PAGEDOMAINKEY",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
-  "Field": "Prerendered",
-  "Query String Param": "nt_act_st",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "PRERENDEREDKEY",
-  "Examples": 10905,
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
-  "Field": "Device Memory",
-  "Query String Param": "dev.mem",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "DEVICEMEMORYKEY",
-  "Examples": 0.25,
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
-  "Field": "BFCahce navigation",
-  "Query String Param": "",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "BFCACHENAVIGATIONKEY",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
-  "Field": "BFCache Not Restored Reason",
-  "Query String Param": "",
-  "S3": "",
-  "Asgard": "",
-  "DSWB BEACON_TABLE var": "BFCACHENOTRESTOREDREASONKEY",
-  "Examples": "",
-  "Description": "",
-  "MetricGroup": "2023dimensions"
-}
-{
   "Query String Param": "scr.xy",
   "S3": "scr.xy",
   "Asgard": "paramsscrxy",
@@ -3431,4 +3261,894 @@
   "Examples": "prefetch preload prerender stylesheet",
   "Description": "Identifies the first interesting rel value on the LINK node (only applicable if initatorType is link)",
   "MetricGroup": "ResourceTimingData"
+}
+{
+  "Query String Param": "n/a",
+  "S3": "restiming.[type]",
+  "Asgard": "[type][metric]",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "26 833151 3061949 1153 10000_7269 0 5 1000",
+  "Description": "Summarized Resource Timing data",
+  "MetricGroup": "ResourceTimingSummaryData"
+}
+{
+  "Query String Param": "usertiming",
+  "S3": "usertiming",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "mark1~2s~mark2~5k~mark3~8c",
+  "Description": "Compressed User Timing data",
+  "MetricGroup": "UserTimingData"
+}
+{
+  "Query String Param": "servertiming",
+  "S3": "servertiming",
+  "Asgard": "--",
+  "DSWB RT Table": "servertiming",
+  "Examples": "1 2:1",
+  "Description": "Compressed Server Timing data",
+  "MetricGroup": "ServerTimingData"
+}
+{
+  "Query String Param": "et.e",
+  "S3": "et.e",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "~(~(c~1~d~'9s~n~'mouseout~p~'0~s~'1ap))",
+  "Description": "Compressed Event Timing data",
+  "MetricGroup": "EventTimingData"
+}
+{
+  "Query String Param": "et.fid",
+  "S3": "et.fid",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 100,
+  "Description": "First Input Delay (ms)",
+  "MetricGroup": "EventTimingData"
+}
+{
+  "Query String Param": "c.b",
+  "S3": "c.b",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 90,
+  "Description": "Page Busy percentage (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.c.r",
+  "S3": "c.c.r",
+  "Asgard": "rageClicks",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 2,
+  "Description": "Rage click count (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.c",
+  "S3": "c.c",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 4,
+  "Description": "Click count (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.cls",
+  "S3": "c.cls",
+  "Asgard": "cumulativeLayoutShift",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 0.1,
+  "Description": "Cumulative Layout Shift",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.e",
+  "S3": "c.e",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "j5twmlbv",
+  "Description": "Continuity Epoch timestamp (when everything started measuring) (Base-36)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.f.d",
+  "S3": "c.f.d",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 11474,
+  "Description": "Frame Rate duration (how long it has been measuring) (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.f.l",
+  "S3": "c.f.l",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 45,
+  "Description": "Number of Long Frames (&gt;= 50ms) (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.f.m",
+  "S3": "c.f.m",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 5,
+  "Description": "Minimum Frame Rate (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.f.s",
+  "S3": "c.f.s",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "jhjiee53",
+  "Description": "Frame Rate measurement start time (Base-36)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.f",
+  "S3": "c.f",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 11,
+  "Description": "Average Frame Rate over the Frame Rate Duration (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.fid",
+  "S3": "timers.fid",
+  "Asgard": "firstInputDelay",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 23,
+  "Description": "First Input Delay (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.i.a",
+  "S3": "c.i.a",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 22,
+  "Description": "Average interaction delay (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.i.dc",
+  "S3": "c.i.dc",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 2,
+  "Description": "Delayed interaction count (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.i.dt",
+  "S3": "c.i.dt",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 145,
+  "Description": "Delayed interaction time (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.k.e",
+  "S3": "c.k.e",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 5,
+  "Description": "Keyboard ESC count (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.k",
+  "S3": "c.k",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 1,
+  "Description": "Keyboard event count (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.l",
+  "S3": "c.l",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "214y xk9 y8p",
+  "Description": "Log (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.lb",
+  "S3": "c.lb",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "j5twmlbv",
+  "Description": "Last Beacon timestamp (Base-36)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.lt.n",
+  "S3": "c.lt.n",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 10,
+  "Description": "Number of Long Tasks (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.lt.tt",
+  "S3": "timers.longtasks",
+  "Asgard": "longTasksTime",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 2000,
+  "Description": "Total duration of Long Tasks (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "--",
+  "S3": "timers.tbt",
+  "Asgard": "totalBlockingTime",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 2000,
+  "Description": "Total Blocking Time (TBT): Total duration of Long Tasks minus threshold of 50ms for each Long Task (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.lt",
+  "S3": "c.lt",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": " ~(~(a~(~(a~1~i~'frame1~t~1))~d~'b7~n~6~s~'5kj)",
+  "Description": "Long Task data (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.m.n",
+  "S3": "c.m.n",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 179,
+  "Description": "Mouse movement pixels (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.m.p",
+  "S3": "c.m.p",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 8,
+  "Description": "Mouse movement percentage (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.s.d",
+  "S3": "c.s.d",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 1,
+  "Description": "Distinct scrolls (scrolls that happen 2 seconds after the last) (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.s.p",
+  "S3": "c.s.p",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 54,
+  "Description": "Scroll percentage (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.s.y",
+  "S3": "c.s.y",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 10754,
+  "Description": "Scroll y (pixels) (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.s",
+  "S3": "c.s",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 27,
+  "Description": "Scroll count (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.click",
+  "S3": "c.t.click",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*1t*0101*q*011",
+  "Description": "Click timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.domln",
+  "S3": "c.t.domln",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "1*1k*0 *1n*14w",
+  "Description": "DOM Length timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.domsz",
+  "S3": "c.t.domsz",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "1*1k*0 *1n*2fmz",
+  "Description": "DOM Size timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.fps",
+  "S3": "c.t.fps",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "03*a*657576576566766507575*8*65",
+  "Description": "Frame Rate timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.inter",
+  "S3": "c.t.inter",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*15*0122*a*01002101100210100013110001000122002",
+  "Description": "Interactions timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.interdly",
+  "S3": "c.t.interdly",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*1v*01*q*01",
+  "Description": "Delayed Interactions timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.key",
+  "S3": "c.t.key",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*2u*01",
+  "Description": "Keyboard press timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.longtask",
+  "S3": "c.t.longtask",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*1i*02*9*02*6*0101*6*01*5*01*m*01",
+  "Description": "LongTask timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.mem",
+  "S3": "c.t.mem",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "1*1j*0 *1o*14hh4w",
+  "Description": "Memory usage timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.mouse",
+  "S3": "c.t.mouse",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*2l*0.4z.",
+  "Description": "Mouse movements timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.mousepct",
+  "S3": "c.t.mousepct",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "2*2m*0008",
+  "Description": "Mouse movement percentage (of full screen) timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.scroll",
+  "S3": "c.t.scroll",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*15*0.94..lb..hv.*a*0.hh.00.1mb.F0m.2c.00.3",
+  "Description": "Scroll timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.scrollpct",
+  "S3": "c.t.scrollpct",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "2*17*000603*9*0003*5*0011*b*0",
+  "Description": "Scroll percentage (of full page) timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.t.mut",
+  "S3": "c.t.mut",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "0*36*01",
+  "Description": "DOM Mutations timeline (compressed)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.ttfi",
+  "S3": "timers.ttfi",
+  "Asgard": "ttfi",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 6091,
+  "Description": "Time to First Interaction (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.tti.fr",
+  "S3": "c.tti.fr",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 1000,
+  "Description": "Framework Ready (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.tti.hi",
+  "S3": "c.tti.hi",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 2000,
+  "Description": "Hero Images ready (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.tti.m",
+  "S3": "c.tti.m",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "lt",
+  "Description": "Time to Interactive Method (lt  raf  b)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.tti.vr",
+  "S3": "timers.ttvr",
+  "Asgard": "ttvr",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 3690,
+  "Description": "Visually Ready (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "c.tti",
+  "S3": "timers.tti",
+  "Asgard": "tti",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 10623,
+  "Description": "Time to Interactive (Base-10)",
+  "MetricGroup": "ContinuityMetrics"
+}
+{
+  "Query String Param": "cip.in",
+  "S3": "cip.in",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 1,
+  "Description": "Equals 1 and indicates that visitor opted-in.",
+  "MetricGroup": "VisitorConsent"
+}
+{
+  "Query String Param": "cip.v",
+  "S3": "cip.in",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": 1,
+  "Description": "Indicates the version of ConsentInlinedPlugin. It's useful to track who is using which version of the plugin because this plugin is not part of Boomerang build.",
+  "MetricGroup": "VisitorConsent"
+}
+{
+  "Query String Param": "ifdl.done",
+  "S3": "ifdl.done",
+  "Asgard": "--",
+  "DSWB RT_TABLE var": "--",
+  "Example": 1512086400000,
+  "Description": "Timestamp of when all &lt;iframe&gt;s were loaded",
+  "MetricGroup": "IFRAMEDelayData"
+}
+{
+  "Query String Param": "ifdl.ct",
+  "S3": "ifdl.ct",
+  "Asgard": "--",
+  "DSWB RT_TABLE var": "--",
+  "Example": 2,
+  "Description": "Number of &lt;iframes&gt; that loaded",
+  "MetricGroup": "IFRAMEDelayData"
+}
+{
+  "Query String Param": "ifdl.r",
+  "S3": "ifdl.r",
+  "Asgard": "--",
+  "DSWB RT_TABLE var": "--",
+  "Example": 1,
+  "Description": "Number of still running &lt;iframe&gt;s )",
+  "MetricGroup": "IFRAMEDelayData"
+}
+{
+  "Query String Param": "ifdl.mon",
+  "S3": "ifdl.mon",
+  "Asgard": "--",
+  "DSWB RT_TABLE var": "--",
+  "Example": 3,
+  "Description": "Number of &lt;iframe&gt;s we were waiting to send a beacon",
+  "MetricGroup": "IFRAMEDelayData"
+}
+{
+  "Query String Param": "tp.ga.clientid",
+  "S3": "tp.ga.clientid",
+  "Asgard": "paramstpgaclientid",
+  "DSWB BEACON_TABLE var": "tpGaClientId",
+  "Examples": "XXXXXXXXXX.YYYYYYYYYY",
+  "Description": "[clientID](https://developers.google.com/analytics/devguides/collection/analyticsjs/cookies-user-id) (unique id per visitor)",
+  "MetricGroup": "GoogleAnalytics"
+}
+{
+  "Query String Param": "tp.ga.utm_source",
+  "S3": "tp.ga.utm_source",
+  "Asgard": "paramstpgautmsource",
+  "DSWB BEACON_TABLE var": "tpGaUtmSource",
+  "Examples": "google newsletter4 billboard",
+  "Description": "[Campaign source](https://support.google.com/analytics/answer/1033863?hl=en)",
+  "MetricGroup": "GoogleAnalytics"
+}
+{
+  "Query String Param": "tp.ga.utm_medium",
+  "S3": "tp.ga.utm_medium",
+  "Asgard": "paramstpgautmmedium",
+  "DSWB BEACON_TABLE var": "tpGaUtmMedium",
+  "Examples": "cpc banner email newsletter",
+  "Description": "[Campaign medium](https://support.google.com/analytics/answer/1033863?hl=en)",
+  "MetricGroup": "GoogleAnalytics"
+}
+{
+  "Query String Param": "tp.ga.utm_term",
+  "S3": "tp.ga.utm_term",
+  "Asgard": "paramstpgautmterm",
+  "DSWB BEACON_TABLE var": "tpGaUtmTerm",
+  "Examples": "term1",
+  "Description": "[Campaign term](https://support.google.com/analytics/answer/1033863?hl=en)",
+  "MetricGroup": "GoogleAnalytics"
+}
+{
+  "Query String Param": "tp.ga.utm_content",
+  "S3": "tp.ga.utm_content",
+  "Asgard": "paramstpgautmcontent",
+  "DSWB BEACON_TABLE var": "tpGaUtmContent",
+  "Examples": "content1",
+  "Description": "[Campaign content](https://support.google.com/analytics/answer/1033863?hl=en)",
+  "MetricGroup": "GoogleAnalytics"
+}
+{
+  "Query String Param": "tp.ga.utm_campaign",
+  "S3": "tp.ga.utm_campaign",
+  "Asgard": "paramstpgautmcampaign",
+  "DSWB BEACON_TABLE var": "tpGaUtmCampaign",
+  "Examples": "campaign1",
+  "Description": "[Campaign ID](https://support.google.com/analytics/answer/1033863?hl=en)",
+  "MetricGroup": "GoogleAnalytics"
+}
+{
+  "Query String Param": "tp.aa.aid",
+  "S3": "tp.aa.aid",
+  "Asgard": "paramstpaaaid",
+  "DSWB BEACON_TABLE var": "tpAaAid",
+  "Examples": "AAAAAAAAAAAAAAAA-AAAAAAAAAAAAAAAA",
+  "Description": "[Analytics ID (AID)](https://marketing.adobe.com/resources/help/en_US/reference/)",
+  "MetricGroup": "AdobeAnalytics"
+}
+{
+  "Query String Param": "tp.aa.mid",
+  "S3": "tp.aa.mid",
+  "Asgard": "paramstpaamid",
+  "DSWB BEACON_TABLE var": "tpAaMid",
+  "Examples": "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM",
+  "Description": "[Marketing ID (MID)](https://marketing.adobe.com/resources/help/en_US/reference/)",
+  "MetricGroup": "AdobeAnalytics"
+}
+{
+  "Query String Param": "tp.aa.campaign",
+  "S3": "tp.aa.campaign",
+  "Asgard": "paramstpaacampaign",
+  "DSWB BEACON_TABLE var": "tpAaCampaign",
+  "Examples": "campaignid",
+  "Description": "[Campaign ID](https://marketing.adobe.com/resources/help/en_US/reference/)",
+  "MetricGroup": "AdobeAnalytics"
+}
+{
+  "Query String Param": "tp.aa.purchaseid",
+  "S3": "tp.aa.purchaseid",
+  "Asgard": "--",
+  "DSWB BEACON_TABLE var": "--",
+  "Examples": "purchaseid",
+  "Description": "[Purchase ID](https://marketing.adobe.com/resources/help/en_US/reference/)",
+  "MetricGroup": "AdobeAnalytics"
+}
+{
+  "Query String Param": "tp.ia.coreid",
+  "S3": "tp.ia.coreid",
+  "Asgard": "paramstpiacoreid",
+  "DSWB BEACON_TABLE var": "tpIaCoreid",
+  "Examples": "80031460041999083951624",
+  "Description": "[Core ID (unique id per visitor)](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.mmc_vendor",
+  "S3": "tp.ia.mmc_vendor",
+  "Asgard": "paramstpiammcvendor",
+  "DSWB BEACON_TABLE var": "tpIaMmcVendor",
+  "Examples": "Google",
+  "Description": "[Campaign vendor](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.mmc_category",
+  "S3": "tp.ia.mmc_category",
+  "Asgard": "paramstpiammccategory",
+  "DSWB BEACON_TABLE var": "tpIaMmcCategory",
+  "Examples": "Home &amp; Garden",
+  "Description": "[Campaign category](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.mmc_placement",
+  "S3": "tp.ia.mmc_placement",
+  "Asgard": "paramstpiammcplacement",
+  "DSWB BEACON_TABLE var": "tpIaMmcPlacement",
+  "Examples": "keywords",
+  "Description": "[Campaign placement](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.mmc_item",
+  "S3": "tp.ia.mmc_item",
+  "Asgard": "paramstpiammcitem",
+  "DSWB BEACON_TABLE var": "tpIaMmcItem",
+  "Examples": "sprinkler",
+  "Description": "[Campaign item](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.sp_type",
+  "S3": "tp.ia.sp_type",
+  "Asgard": "paramstpiasptype",
+  "DSWB BEACON_TABLE var": "tpIaSpType",
+  "Examples": "fall",
+  "Description": "[Site promotion type](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.sp_promotion",
+  "S3": "tp.ia.sp_promotion",
+  "Asgard": "paramstpiasppromotion",
+  "DSWB BEACON_TABLE var": "tpIaSpPromotion",
+  "Examples": "sale",
+  "Description": "[Site promotion](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.sp_link",
+  "S3": "tp.ia.sp_link",
+  "Asgard": "paramstpiasplink",
+  "DSWB BEACON_TABLE var": "tpIaSpLink",
+  "Examples": "free shipping?cm_mmc=...",
+  "Description": "[Site promotion link](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.re_version",
+  "S3": "tp.ia.re_version",
+  "Asgard": "paramstpiareversion",
+  "DSWB BEACON_TABLE var": "tpIaReVersion",
+  "Examples": "page A",
+  "Description": "[Real estate version](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.re_pagearea",
+  "S3": "tp.ia.re_pagearea",
+  "Asgard": "paramstpiarepagearea",
+  "DSWB BEACON_TABLE var": "tpIaRePageArea",
+  "Examples": "left navbar",
+  "Description": "[Real estate page area](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Query String Param": "tp.ia.re_link",
+  "S3": "tp.ia.re_link",
+  "Asgard": "paramstpiarelink",
+  "DSWB BEACON_TABLE var": "tpIaReLink",
+  "Examples": "mens shirts",
+  "Description": "[Real estate link](https://www.ibm.com/support/knowledgecenter/en/SSPG9M/Analytics/kc_welcome_analytics.html)",
+  "MetricGroup": "IBMDigitalAnalytics"
+}
+{
+  "Field": "Frustration Index",
+  "Query String Param": "",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "FRUSTRATIONINDEX",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023metrics"
+}
+{
+  "Field": "LCP Decoded Body Size",
+  "Query String Param": "pt.lcp.e.dbs",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "LARGESTCONTENTFULPAINTELEMENTDECODEDBODYSIZE",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023metrics"
+}
+{
+  "Field": "First Contentful Paint (Front End)",
+  "Query String Param": "fcp - t_resp",
+  "S3": "fcpfe",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "largestcontentfulpaintfrontend",
+  "Examples": "",
+  "Description": "fcp - ttfb",
+  "MetricGroup": "2023timers"
+}
+{
+  "Field": "Largest Contentful Paint (Front End)",
+  "Query String Param": "lcp - t_resp",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "LARGESTCONTENTFULPAINTFRONTEND",
+  "Examples": "",
+  "Description": "lcp - ttfb",
+  "MetricGroup": "2023timers"
+}
+{
+  "Field": "Time to Visually Ready (Front End)",
+  "Query String Param": "ttvr - ttfb",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023timers"
+}
+{
+  "Field": "Time to Interactive  (Front End)",
+  "Query String Param": "tti - ttfb",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023timers"
+}
+{
+  "Field": "Time to Request",
+  "Query String Param": "ttr",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "TIMETOREQUEST",
+  "Examples": "",
+  "Description": "nt_req_st - nt_nav_st",
+  "MetricGroup": "2023nettimers"
+}
+{
+  "Field": "Unattributed Navigation Overhead \"UNO\"",
+  "Query String Param": "(nt_unload_st-nt_nav_st)(nt_red_st-nt_unload_end)(nt_con_st-nt_dns_end)+(nt_req_st-nt_con_end)",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "UNATTRIBUTEDNAVIGATIONOVERHEAD,",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023nettimers"
+}
+{
+  "Field": "LCP Transfer Time",
+  "Query String Param": "RT[].ResponseEnd - RT[].StartTime || 0",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "LARGESTCONTENTFULPAINTELEMENTTRANSFERTIME",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023nettimers"
+}
+{
+  "Field": "Page DCN Cache Status",
+  "Query String Param": "",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "PAGECDNCACHESTATUSKEY",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023dimensions"
+}
+{
+  "Field": "EdgeWorker Executed",
+  "Query String Param": "ak.ew",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "EDGEWORKEREXECUTEDKEY",
+  "Examples": 1,
+  "Description": "",
+  "MetricGroup": "2023dimensions"
+}
+{
+  "Field": "Early Hints",
+  "Query String Param": "nt_fir_st",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "EARLYHINTSKEY",
+  "Examples": 1000000010800,
+  "Description": "",
+  "MetricGroup": "2023dimensions"
+}
+{
+  "Field": "Page Domain",
+  "Query String Param": "params.u (extracted from)",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "PAGEDOMAINKEY",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023dimensions"
+}
+{
+  "Field": "Prerendered",
+  "Query String Param": "nt_act_st",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "PRERENDEREDKEY",
+  "Examples": 10905,
+  "Description": "",
+  "MetricGroup": "2023dimensions"
+}
+{
+  "Field": "Device Memory",
+  "Query String Param": "dev.mem",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "DEVICEMEMORYKEY",
+  "Examples": 0.25,
+  "Description": "",
+  "MetricGroup": "2023dimensions"
+}
+{
+  "Field": "BFCahce navigation",
+  "Query String Param": "",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "BFCACHENAVIGATIONKEY",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023dimensions"
+}
+{
+  "Field": "BFCache Not Restored Reason",
+  "Query String Param": "",
+  "S3": "",
+  "Asgard": "",
+  "DSWB BEACON_TABLE var": "BFCACHENOTRESTOREDREASONKEY",
+  "Examples": "",
+  "Description": "",
+  "MetricGroup": "2023dimensions"
 }
