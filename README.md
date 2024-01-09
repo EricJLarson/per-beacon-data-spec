@@ -22,6 +22,7 @@ This is the specfication of the data that each beacon may contain, and the data 
       1. [Count all Query String Param values ](#CountallQueryStringParam)
       1. [Count all rows that have no Query String Param value](#Countallrowsthathave)
       1. [Print whole spec as CSV](#PrintwholespecasCSV)
+   1. [Query Convenience Functions](#QueryConenvienceFunctions)
 1. [Source of Spec ](#SourceofSpec)
 1. [Compilation of Spec ](#CompilationofSpec)
    1. [Compilation Procedure ](#CompilationProcedure)
@@ -188,6 +189,51 @@ This was used to generate [Google Sheet version of spec](https://docs.google.com
     ) as $rows |
     $cols, $rows[] |
     @csv
+```
+
+## Query Convenience Functions <a name="QueryConenvienceFunctions"></a>
+
+These are Bash function definitions that take a JQ query string argument, such as those in [JQuery Examples ](#JQueryExamples).
+To use, either paste these in the shell or add to _~/.bash\_profile_.
+
+```
+spec () {
+  curl -s 'https://raw.githubusercontent.com/EricJLarson/per-beacon-data-spec/master/beaconspec.json' |\
+  jq "${1}";
+}
+```
+
+```
+csv () {
+ jq -sr '
+    (map(keys) |
+        add |
+        unique
+    ) as $cols |
+    map(. as $row |
+         $cols |
+         map(
+            $row[.]
+        )
+    ) as $rows |
+    $cols, $rows[] |
+    @csv';
+}
+```
+
+```
+specpretty () {
+  spec "${1}" | csv | column -t -s,;
+}
+```
+
+To use, pass a JQ query as a command line argument to either `spec` or `speccvs`, e.g.
+
+```
+specpretty '
+    .[] |select(.S3=="ak.ed") |
+    {group:.MetricGroup, field:.Field, s3:.S3}
+'
 ```
 
 # Source of Spec <a name="SourceofSpec"></a>
