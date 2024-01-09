@@ -51,26 +51,26 @@ jq '
 '
 ```
 
-### Find row for S3 "ak.ed" 
+### Find row for S3 ak.ed 
 
 ```
     .[] | select(.S3=="ak.ed") 
 ```
 
-### Find row for S3 "ak.ed", get MetricGroup and Field
+### Find row for S3 ak.ed and get MetricGroup and Field
 
 ```
     .[] | select(.S3=="ak.ed") | 
     {group:.MetricGroup, field:.Field, s3:.S3}
 ``` 
 
-### Find all rows with key "Field"
+### Find all rows with key Field
 
 ```
     .[] | select(.Field) 
 ```
 
-### List the keys for a member of group "Akamai" 
+### List the keys for a member of group Akamai 
 
 ```
     map(
@@ -93,7 +93,7 @@ jq '
     length
 ```
 
-### List all keys for all members of group "Akamai" 
+### List all keys for all members of group Akamai 
 
 ```
     map(
@@ -105,7 +105,7 @@ jq '
 ```
 
 
-### List all Query String Param values for all members of group "Akamai" 
+### List all Query String Param values for all members of group Akamai 
 
 ```
     map(
@@ -115,7 +115,7 @@ jq '
     unique
 ```
 
-### List all Query String Param values for all members of group "Akamai" 
+### List all Query String Param values for all members of group Akamai 
 
 ```
     map(
